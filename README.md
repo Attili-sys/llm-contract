@@ -16,6 +16,7 @@
 
 - [🚀 Quick Start](#-quick-start)
 - [🎯 What It Does](#-what-it-does)
+- [🔍 How Is This Different?](#-how-is-this-different)
 - [🧰 Core Features](#-core-features)
 - [📖 Examples](#-examples)
 - [🌍 Real-World Use Cases](#-real-world-use-cases)
@@ -84,6 +85,26 @@ LLMs follow patterns, not instructions. What "looks right" can silently break ap
 - ✅ **Repair or reject** invalid outputs
 
 This is a safety net between prompts and production.
+
+## 🔍 How Is This Different?
+
+**Validate AI like you validate code — enforce rules, not hope for the best.**
+
+`llm-contracts` is not a model orchestration library. It doesn't reroute, repair, or retry outputs — it asserts correctness after the generation step.
+
+| Tool / Library | Focus | llm-contracts Difference |
+|---|---|---|
+| **Guardrails** | Validates and rewrites model output | We validate and fail fast — no magic fixes |
+| **Unstructured** | Parses messy documents into structure | We expect structure and enforce contracts |
+| **Pydantic** | Python runtime type validation | We support language-level rules, not just types |
+| **LLM-as-a-Judge** | Uses models to rate themselves | We use rules, not opinions |
+| **LangChain** | Pipeline and toolchain orchestration | We're a QA layer, not orchestration |
+
+**Think of this as the unit test framework for AI-generated content — not a controller, not a wrapper, not another GPT tool.**
+
+> **Other tools try to fix LLM output.**  
+> **llm-contracts asks:** "Did the AI follow the rules?"  
+> **If not, we fail it — no excuses.**
 
 ## 🧰 Core Features
 
