@@ -1,0 +1,14 @@
+rules:
+- keyword_must_include:
+  - call to action
+  - limited time
+  - exclusive
+- keyword_must_not_include:
+  - technical jargon
+  - complex terms
+- word_count_min: 50
+- word_count_max: 300
+- max_passive_voice_ratio: 0.1
+- phrase_order:
+    first: benefits
+    then: call to action

@@ -1,0 +1,4 @@
+rules:
+- include: team_rules/marketing_rules.yaml
+schema:
+  type: object

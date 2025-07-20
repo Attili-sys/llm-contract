@@ -1,0 +1,15 @@
+# Common validation rules that can be included in other schemas
+rules:
+  # Content quality rules
+  - keyword_must_not_include: ["as an AI model", "I cannot", "I'm sorry", "I apologize"]
+  - no_placeholder_text: "\\[YOUR_TEXT_HERE\\]"
+  - no_placeholder_text: "\\[DESCRIPTION\\]"
+  - no_placeholder_text: "\\[PRODUCT_NAME\\]"
+  
+  # Writing style rules
+  - no_duplicate_sentences: true
+  - max_passive_voice_ratio: 0.3
+  
+  # Basic structure rules
+  - word_count_min: 50
+  - word_count_max: 2000 

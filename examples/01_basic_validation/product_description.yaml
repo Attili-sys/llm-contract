@@ -1,0 +1,60 @@
+schema:
+  type: object
+  properties:
+    product_id:
+      type: string
+      pattern: "^PROD-[A-Z0-9]{8}$"
+    title:
+      type: string
+      minLength: 10
+      maxLength: 100
+    description:
+      type: string
+      minLength: 100
+      maxLength: 1000
+    price:
+      type: number
+      minimum: 0.01
+    category:
+      type: string
+      enum: ["electronics", "clothing", "home", "sports", "books"]
+    features:
+      type: array
+      items:
+        type: string
+      minItems: 1
+      maxItems: 10
+  required:
+    - product_id
+    - title
+    - description
+    - price
+    - category
+    - features
+
+rules:
+  # Quality requirements
+  - keyword_must_include: ["quality", "premium", "durable"]
+  - keyword_must_not_include: ["cheap", "low quality", "defective", "broken"]
+  
+  # Content validation
+  - no_placeholder_text: "\\[YOUR_TEXT_HERE\\]"
+  - no_placeholder_text: "\\[DESCRIPTION\\]"
+  - word_count_min: 100
+  - word_count_max: 500
+  
+  # Legal requirements
+  - keyword_must_include: "warranty"
+  - keyword_must_include: "return policy"
+  - phrase_proximity:
+      terms: ["warranty", "30"]
+      max_distance: 20
+  
+  # SEO requirements
+  - keyword_must_include: "buy now"
+  - keyword_must_include: "free shipping"
+  
+  # Structure requirements
+  - phrase_order:
+      first: "features"
+      then: "buy now" 

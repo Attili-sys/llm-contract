@@ -1,0 +1,4 @@
+rules:
+- include: team_rules/technical_rules.yaml
+schema:
+  type: object

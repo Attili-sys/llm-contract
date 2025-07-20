@@ -1,0 +1,37 @@
+schema:
+  type: object
+  properties:
+    product_id:
+      type: string
+      pattern: "^PROD-[A-Z0-9]{8}$"
+    title:
+      type: string
+      minLength: 10
+      maxLength: 100
+    description:
+      type: string
+      minLength: 100
+      maxLength: 1000
+    price:
+      type: number
+      minimum: 0.01
+    category:
+      type: string
+      enum: ["electronics", "clothing", "home", "sports", "books"]
+  required:
+    - product_id
+    - title
+    - description
+    - price
+    - category
+
+rules:
+  # Include common rules
+  - include: "rule_bundles/common_rules.yaml"
+  
+  # Include e-commerce specific rules
+  - include: "rule_bundles/ecommerce_rules.yaml"
+  
+  # Schema-specific rules
+  - regex_must_match: "\\b\\d{1,3}(?:\\.\\d{2})?\\s*USD\\b"
+  - section_must_start_with: "^# Product Description" 

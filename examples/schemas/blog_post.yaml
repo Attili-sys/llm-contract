@@ -1,0 +1,22 @@
+schema:
+  title:
+    type: string
+    minLength: 10
+    maxLength: 100
+  content:
+    type: string
+    minLength: 100
+
+rules:
+  - keyword_must_not_include: ["as an AI model", "I cannot", "I'm sorry"]
+  - no_placeholder_text: "\\[YOUR_TEXT_HERE\\]"
+  - word_count_min: 50
+  - section_must_start_with: "^# [A-Z][a-z]+"
+  - list_item_pattern: "^\\d+\\. [A-Z].*"
+  - keyword_must_include: "conclusion"
+  - phrase_order: 
+      first: "introduction"
+      then: "conclusion"
+  - keyword_proximity:
+      terms: ["benefits", "advantages"]
+      max_distance: 15 

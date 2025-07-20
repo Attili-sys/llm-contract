@@ -1,0 +1,22 @@
+# E-commerce specific validation rules
+rules:
+  # Product quality requirements
+  - keyword_must_include: ["quality", "premium", "durable"]
+  - keyword_must_not_include: ["cheap", "low quality", "defective", "broken"]
+  
+  # Legal requirements
+  - keyword_must_include: "warranty"
+  - keyword_must_include: "return policy"
+  - phrase_proximity:
+      terms: ["warranty", "30"]
+      max_distance: 20
+  
+  # SEO requirements
+  - keyword_must_include: "buy now"
+  - keyword_must_include: "free shipping"
+  
+  # Content structure
+  - phrase_order:
+      first: "features"
+      then: "buy now"
+  - min_list_items: 3 
