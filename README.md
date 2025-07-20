@@ -10,25 +10,27 @@
 
 `llm-contracts` is a developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs. Think of it as "ESLint + Pytest" for AI responses — without requiring a specific model or cloud API.
 
+If you're building with LLMs, this was made for you — by someone who actually uses them in production.
+
 **Created by [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)**
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [🚀 Quick Start](#-quick-start)
-- [🎯 What It Does](#-what-it-does)
-- [🔍 How Is This Different?](#-how-is-this-different)
-- [🧰 Core Features](#-core-features)
-- [📖 Examples](#-examples)
-- [🌍 Real-World Use Cases](#-real-world-use-cases)
-- [🛠️ Advanced Usage](#-advanced-usage)
-- [📚 API Reference](#-api-reference)
-- [🧪 Testing](#-testing)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🙏 Acknowledgments](#-acknowledgments)
-- [📞 Support](#-support)
+- [Quick Start](#quick-start)
+- [What It Does](#what-it-does)
+- [How Is This Different?](#how-is-this-different)
+- [Core Features](#core-features)
+- [Examples](#examples)
+- [Real-World Use Cases](#real-world-use-cases)
+- [Advanced Usage](#advanced-usage)
+- [API Reference](#api-reference)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Support](#support)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -75,18 +77,20 @@ contracts.generate_report(result, 'report.md', 'schema.yaml', 'markdown')
 result = contracts.validate_and_report(data, 'schema.yaml', 'report.html', 'html')
 ```
 
-## 🎯 What It Does
+## What It Does
+
+We got burned too many times by "looks right" AI responses that quietly broke apps. This isn't another GPT wrapper — it's your test suite for machine output.
 
 LLMs follow patterns, not instructions. What "looks right" can silently break apps. `llm-contracts` exists to:
 
-- ✅ **Validate structure** (JSON, Markdown, text)
-- ✅ **Lint content** (phrases, tone, repetition)
-- ✅ **Assert semantic logic** (summaries, tool use)
-- ✅ **Repair or reject** invalid outputs
+- **Validate structure** (JSON, Markdown, text)
+- **Lint content** (phrases, tone, repetition)
+- **Assert semantic logic** (summaries, tool use)
+- **Repair or reject** invalid outputs
 
 This is a safety net between prompts and production.
 
-## 🔍 How Is This Different?
+## How Is This Different?
 
 **Validate AI like you validate code — enforce rules, not hope for the best.**
 
@@ -106,7 +110,9 @@ This is a safety net between prompts and production.
 > **llm-contracts asks:** "Did the AI follow the rules?"  
 > **If not, we fail it — no excuses.**
 
-## 🧰 Core Features
+Will this prevent GPT from inventing Martian presidents? No. But it will tell you when it does.
+
+## Core Features
 
 ### Schema-Based Validation
 
@@ -173,7 +179,7 @@ Reports include:
 - Responsive design (HTML)
 - Markdown formatting (MD)
 
-## 📖 Examples
+## Examples
 
 ### Rule Bundles
 
@@ -253,7 +259,7 @@ rules:
   - no_placeholder_text: "\\[YOUR_TEXT_HERE\\]"
 ```
 
-## 🌍 Real-World Use Cases
+## Real-World Use Cases
 
 ### **Case Study 1: Catching GPT Hallucinations**
 
@@ -356,7 +362,7 @@ rules:
 
 **Result**: 100% valid API responses, eliminated downstream processing errors.
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Custom Validators
 
@@ -392,7 +398,7 @@ llm-validate --batch outputs/ --schema schema.yaml --html-report batch_report.ht
     llm-validate --batch outputs/ --schema schemas/ --html-report validation_report.html
 ```
 
-## 📚 API Reference
+## API Reference
 
 ### CLI Commands
 
@@ -445,7 +451,7 @@ result = contracts.validate_and_report(
 )
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -458,7 +464,7 @@ python -m pytest tests/test_schema.py
 python -m pytest --cov=llm_contracts tests/
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
@@ -476,18 +482,18 @@ pip install -e .
 python -m pytest tests/
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Created by**: [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)
 - **Inspired by**: The need for reliable LLM output validation
 - **Built with**: Modern Python best practices
 - **Designed for**: Developer productivity
 
-## 📞 Support
+## Support
 
 - **Issues**: [GitHub Issues](https://github.com/Maxamed/llm-contract/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/Maxamed/llm-contract/discussions)
