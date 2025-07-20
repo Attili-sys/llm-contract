@@ -283,7 +283,7 @@ rules:
   - regex_must_match: "\\$\\d{2,3}(?:\\.\\d{2})?\\s*-\\s*\\$\\d{2,3}(?:\\.\\d{2})?"
 ```
 
-**Result**: Caught 15+ hallucinated features before they went live, saving hours of manual review.
+*Note: These case studies demonstrate the framework's capabilities. Real-world results will vary based on implementation quality and specific use cases.*
 
 ### **Case Study 2: E-commerce Product Validation**
 
@@ -310,8 +310,6 @@ rules:
   - max_title_length: 60
 ```
 
-**Result**: 95% reduction in product listing errors, improved SEO rankings.
-
 ### **Case Study 3: Content Moderation**
 
 **Problem**: AI-generated content sometimes included inappropriate language or placeholder text.
@@ -332,8 +330,6 @@ rules:
   - max_passive_voice_ratio: 0.3
   - keyword_must_include: ["professional", "quality"]
 ```
-
-**Result**: Automated content screening, reduced manual review time by 80%.
 
 ### **Case Study 4: API Response Validation**
 
@@ -359,8 +355,6 @@ rules:
   - no_null_values: true
   - consistent_date_format: "ISO 8601"
 ```
-
-**Result**: 100% valid API responses, eliminated downstream processing errors.
 
 ## Advanced Usage
 
