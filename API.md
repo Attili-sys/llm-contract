@@ -34,14 +34,13 @@ result = contracts.validate_and_report(data, 'schema.yaml', 'report.html', 'html
 
 ## Core API
 
-### `contracts.validate(data, schema_path, custom_validator=None)`
+### `contracts.validate(data, schema_path)`
 
 Validates output data against a YAML schema.
 
 **Parameters:**
 - `data` (dict or str): JSON data to validate
 - `schema_path` (str or Path): Path to YAML schema file
-- `custom_validator` (callable, optional): Custom validation function
 
 **Returns:**
 - `ValidationResult`: Object containing validation status and errors
@@ -62,14 +61,13 @@ if not result.is_valid:
     print("Validation errors:", result.errors)
 ```
 
-### `contracts.lint(data, schema_path, custom_validator=None)`
+### `contracts.lint(data, schema_path)`
 
 Lints content for quality and style issues.
 
 **Parameters:**
 - `data` (dict or str): Content to lint
 - `schema_path` (str or Path): Path to YAML schema file with linting rules
-- `custom_validator` (callable, optional): Custom validation function
 
 **Returns:**
 - `ValidationResult`: Object containing linting status and issues
@@ -547,7 +545,7 @@ jobs:
           
       - name: Validate outputs
         run: |
-          llm-validate --batch outputs/ --schema schemas/ --html-report validation_report.html
+          llm-validate output.json --schema schema.yaml --html-report validation_report.html
           
       - name: Upload report
         uses: actions/upload-artifact@v3

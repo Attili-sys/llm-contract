@@ -8,9 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Custom validator support for user-defined validation functions
-- Batch processing capabilities for multiple files
-- Strict mode for immediate failure on validation errors
 - Enhanced error messages with more context
 
 ### Changed
@@ -58,7 +55,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CLI Features**
   - Single file validation: `llm-validate file.json --schema schema.yaml`
   - HTML report generation: `--html-report report.html`
-  - Batch processing: `--batch directory/`
   - Help and usage information: `--help`
 
 - **HTML Reports**
@@ -84,8 +80,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Product description validation** with quality keywords and placeholder detection
 - **User profile validation** with field type checking and format validation
 - **Blog post validation** with Markdown structure and content rules
-- **Batch processing** for multiple files
-- **Custom validators** for specific business logic
 
 ### Testing
 - **Unit tests** for all core functionality

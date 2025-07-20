@@ -54,9 +54,6 @@ llm-validate output.json --schema schema.yaml --html-report report.html
 
 # Generate Markdown report
 llm-validate output.json --schema schema.yaml --md-report report.md
-
-# Batch processing
-llm-validate --batch outputs/ --schema schema.yaml
 ```
 
 ### Python SDK
@@ -64,17 +61,35 @@ llm-validate --batch outputs/ --schema schema.yaml
 ```python
 from llm_contracts import contracts
 
-# Validate output
-result = contracts.validate(data, 'schema.yaml')
+# Validate output against schema
+result = contracts.validate(
+    data,                    # Dict or JSON string
+    schema_path,            # Path to YAML schema
+)
 
 # Generate HTML report
-contracts.generate_report(result, 'report.html', 'schema.yaml', 'html')
+contracts.generate_report(
+    result,                 # Validation result
+    output_path,           # HTML file path
+    schema_path,           # Schema file path
+    format="html"          # Report format
+)
 
 # Generate Markdown report
-contracts.generate_report(result, 'report.md', 'schema.yaml', 'markdown')
+contracts.generate_report(
+    result,                 # Validation result
+    output_path,           # Markdown file path
+    schema_path,           # Schema file path
+    format="markdown"      # Report format
+)
 
 # Validate and report in one call
-result = contracts.validate_and_report(data, 'schema.yaml', 'report.html', 'html')
+result = contracts.validate_and_report(
+    data,                  # Data to validate
+    schema_path,           # Schema file path
+    report_path,           # Optional report file path
+    report_format="html"   # Report format
+)
 ```
 
 ## What It Does
@@ -358,28 +373,6 @@ rules:
 
 ## Advanced Usage
 
-### Custom Validators
-
-```python
-from llm_contracts import contracts
-
-def custom_validator(content, schema):
-    # Your custom validation logic
-    if "spam" in content.lower():
-        return False, ["Content contains spam"]
-    return True, []
-
-# Use in validation
-result = contracts.validate(data, 'schema.yaml', custom_validator=custom_validator)
-```
-
-### Batch Processing
-
-```bash
-# Validate all JSON files in a directory
-llm-validate --batch outputs/ --schema schema.yaml --html-report batch_report.html
-```
-
 ### Integration with CI/CD
 
 ```yaml
@@ -389,7 +382,7 @@ llm-validate --batch outputs/ --schema schema.yaml --html-report batch_report.ht
     git clone https://github.com/Maxamed/llm-contract.git
     cd llm-contracts
     pip install -e .
-    llm-validate --batch outputs/ --schema schemas/ --html-report validation_report.html
+    llm-validate output.json --schema schema.yaml --html-report validation_report.html
 ```
 
 ## API Reference
@@ -416,7 +409,6 @@ from llm_contracts import contracts
 result = contracts.validate(
     data,                    # Dict or JSON string
     schema_path,            # Path to YAML schema
-    custom_validator=None   # Optional custom validator
 )
 
 # Generate HTML report
@@ -440,8 +432,7 @@ result = contracts.validate_and_report(
     data,                  # Data to validate
     schema_path,           # Schema file path
     report_path,           # Optional report file path
-    report_format="html",  # Report format
-    custom_validator=None  # Optional custom validator
+    report_format="html"   # Report format
 )
 ```
 
