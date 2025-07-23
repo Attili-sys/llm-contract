@@ -1,0 +1,39 @@
+schema:
+  type: object
+  additionalProperties: false
+  properties:
+    translation:
+      type: string
+      minLength: 1
+    words:
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          type: string
+  required:
+    - translation
+    - words
+
+rules:
+  # For testing duplicate sentences (expect content with duplicates to fail)
+  - no_duplicate_sentences: true
+  # For testing list items (expect content with sufficient bullet points)
+  - min_list_items: 3
+  # For testing passive voice (expect overly passive content to fail)
+  - max_passive_voice_ratio: 0.3
+  # For testing phrase proximity
+  - phrase_proximity:
+      terms: ["warranty", "30"]
+      max_distance: 10
+  # For testing phrase order
+  - phrase_order:
+      first: "features"
+      then: "buy now"
+  # For testing regex patterns (price format)
+  - regex_must_match: "\\$\\d+\\.\\d{2}"
+  # Content quality rules
+  - keyword_must_include: ["quality", "premium"]
+  - keyword_must_not_include: ["cheap", "low-quality"]
+  - word_count_min: 20
+  - word_count_max: 100 
