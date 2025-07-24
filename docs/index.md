@@ -37,6 +37,7 @@ This is a safety net between prompts and production.
 - [Web Frontend](frontend.html)
 - [Examples](examples.html)
 - [API Reference](api-reference.html)
+- [White Paper: Fluent, Confident, and Totally Wrong, Until Now](whitepaper.html)
 - [GitHub Repository](https://github.com/Maxamed/llm-contract)
 
 ## How Is This Different?
