@@ -1,0 +1,33 @@
+title: llm//contracts
+description: Developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs
+theme: just-the-docs
+
+url: https://maxamed.github.io/llm-contract
+
+aux_links:
+  "llm//contracts on GitHub":
+    - "//github.com/Maxamed/llm-contract"
+
+# Color scheme
+color_scheme: light
+
+# Enable search
+search_enabled: true
+
+# Enable copy code button
+enable_copy_code_button: true
+
+# Footer content
+footer_content: "Copyright &copy; 2023-2024 Mohamed Jama. Distributed under an <a href=\"https://github.com/Maxamed/llm-contract/blob/main/LICENSE\">MIT license.</a>"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer "Edit this page on GitHub" link
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/Maxamed/llm-contract"
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
+gh_edit_source: docs 
