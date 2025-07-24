@@ -20,6 +20,7 @@ If you're building with LLMs, this was made for you — by someone who actually 
 - [What It Does](#what-it-does)
 - [How Is This Different?](#how-is-this-different)
 - [Core Features](#core-features)
+- [Web Frontend](#web-frontend)
 - [Examples](#examples)
 - [Real-World Use Cases](#real-world-use-cases)
 - [Advanced Usage](#advanced-usage)
@@ -193,6 +194,35 @@ Reports include:
 - Success rate calculations
 - Responsive design (HTML)
 - Markdown formatting (MD)
+
+## Web Frontend
+
+The project includes a web-based frontend for testing and validating LLM outputs:
+
+### Frontend Features
+
+- **Schema Builder**: Create validation schemas using visual builder, AI generation, or YAML editor
+- **Template Library**: Pre-built schemas for common use cases
+- **LLM Integration**: Generate outputs using Gemini API
+- **Validation**: Validate LLM outputs against your schemas
+- **Reports**: Generate HTML and Markdown validation reports
+
+### Running the Frontend
+
+```bash
+# Navigate to the frontend directory
+cd frontend
+
+# Install frontend dependencies
+pip install -r requirements.txt
+
+# Run the backend server
+python server.py
+
+# Open index.html in your browser
+```
+
+For more details, see the [Frontend README](frontend/README.md).
 
 ## Examples
 

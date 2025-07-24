@@ -18,7 +18,7 @@ def validate_rules(
     rules: List[Dict[str, Any]]
 ) -> List[str]:
     """
-    Validate content against a list of rules.
+    Validate content against a list of rules with production safety.
     
     Args:
         content: Content to validate (string or dict)
@@ -30,14 +30,45 @@ def validate_rules(
     errors: List[str] = []
     
     # Convert content to string for text-based rules
+    # FIXED: Extract actual text content from dictionary instead of stringifying the dict
     if isinstance(content, dict):
-        content_str = str(content)
+        # For structured content, extract the text field(s) for rule validation
+        if "translation" in content:
+            content_str = content["translation"]
+        elif "content" in content:
+            content_str = content["content"]
+        elif "text" in content:
+            content_str = content["text"]
+        else:
+            # Fallback: combine all string values in the dict
+            text_parts = []
+            for value in content.values():
+                if isinstance(value, str):
+                    text_parts.append(value)
+            content_str = " ".join(text_parts) if text_parts else str(content)
     else:
         content_str = str(content)
     
-    for rule in rules:
-        rule_errors = _validate_single_rule(content_str, rule)
-        errors.extend(rule_errors)
+    # Production safety: Check content size before processing
+    MAX_CONTENT_SIZE = 1_000_000  # 1MB limit
+    content_size = len(content_str.encode('utf-8'))
+    if content_size > MAX_CONTENT_SIZE:
+        errors.append(
+            f"Content size ({content_size:,} bytes) exceeds maximum allowed "
+            f"({MAX_CONTENT_SIZE:,} bytes). Please reduce content size for processing."
+        )
+        return errors  # Don't process oversized content
+    
+    for i, rule in enumerate(rules):
+        try:
+            rule_errors = _validate_single_rule(content_str, rule)
+            errors.extend(rule_errors)
+        except Exception as e:
+            # Production error handling with context
+            rule_types = list(rule.keys())
+            errors.append(
+                f"Error processing rule {i+1} ({', '.join(rule_types)}): {str(e)}"
+            )
     
     return errors
 
@@ -63,20 +94,20 @@ def _validate_single_rule(
             if rule_type == "keyword_must_include":
                 if isinstance(rule_value, str):
                     if rule_value.lower() not in content.lower():
-                        errors.append(f"Must include keyword: '{rule_value}'")
+                        errors.append(f"Missing required keyword: '{rule_value}'. Please include this term in your content.")
                 elif isinstance(rule_value, list):
                     for keyword in rule_value:
                         if keyword.lower() not in content.lower():
-                            errors.append(f"Must include keyword: '{keyword}'")
+                            errors.append(f"Missing required keyword: '{keyword}'. Please include this term in your content.")
             
             elif rule_type == "keyword_must_not_include":
                 if isinstance(rule_value, str):
                     if rule_value.lower() in content.lower():
-                        errors.append(f"Must not include keyword: '{rule_value}'")
+                        errors.append(f"Prohibited keyword found: '{rule_value}'. Please remove or rephrase this content.")
                 elif isinstance(rule_value, list):
                     for keyword in rule_value:
                         if keyword.lower() in content.lower():
-                            errors.append(f"Must not include keyword: '{keyword}'")
+                            errors.append(f"Prohibited keyword found: '{keyword}'. Please remove or rephrase this content.")
             
             elif rule_type == "no_placeholder_text":
                 pattern = re.compile(rule_value, re.IGNORECASE)
@@ -135,29 +166,58 @@ def _validate_single_rule(
                     errors.append(f"Content must match regex pattern: '{rule_value}'")
             
             elif rule_type == "no_duplicate_sentences":
-                sentences = re.split(r'[.!?]+', content)
-                sentences = [s.strip() for s in sentences if s.strip()]
+                # FIXED: Robust duplicate detection with proper normalization
+                if not rule_value:  # Skip if rule is disabled
+                    continue
+                    
+                # Enhanced sentence splitting that handles various punctuation
+                sentences = re.split(r'[.!?]+(?:\s|$)', content)
                 
-                seen_sentences = set()
+                # Robust sentence normalization and comparison
+                normalized_sentences = set()
                 duplicates = []
                 
                 for sentence in sentences:
-                    sentence_lower = sentence.lower()
-                    if sentence_lower in seen_sentences:
+                    sentence = sentence.strip()
+                    if not sentence:
+                        continue
+                    
+                    # Comprehensive normalization for comparison
+                    normalized = sentence.lower()
+                    # Remove extra whitespace
+                    normalized = re.sub(r'\s+', ' ', normalized)
+                    # Remove punctuation for comparison
+                    normalized = re.sub(r'[^\w\s]', '', normalized).strip()
+                    
+                    if normalized in normalized_sentences:
                         duplicates.append(sentence)
                     else:
-                        seen_sentences.add(sentence_lower)
+                        normalized_sentences.add(normalized)
                 
                 if duplicates:
-                    errors.append(f"Duplicate sentences found: {len(duplicates)} instances")
+                    duplicate_examples = [f'"{dup[:50]}..."' for dup in duplicates[:2]]
+                    errors.append(f"Duplicate sentences detected ({len(duplicates)} instances). Examples: {', '.join(duplicate_examples)}. Please rephrase or remove duplicate content.")
             
             elif rule_type == "min_list_items":
-                # Count list items (bullet points, numbered lists)
-                list_pattern = re.compile(r'^[\s]*[•\-\*]\s|^[\s]*\d+\.\s', re.MULTILINE)
-                list_items = list_pattern.findall(content)
+                # FIXED: Enhanced list item detection for production use
+                # Handles indented lists, Unicode bullets, and real-world formatting
+                if rule_value <= 0:
+                    continue  # Skip if rule is disabled
                 
-                if len(list_items) < rule_value:
-                    errors.append(f"Must have at least {rule_value} list items, found {len(list_items)}")
+                total_items = 0
+                
+                # Pattern 1: Unicode and ASCII bullets with flexible spacing
+                bullet_pattern = r'(?:^|\n)[\s]*[•\u2022\u2023\u25e6\u2043\-\*\+][\s]+\S'
+                bullet_matches = re.findall(bullet_pattern, content, re.MULTILINE)
+                total_items += len(bullet_matches)
+                
+                # Pattern 2: Numbered lists with flexible formatting  
+                number_pattern = r'(?:^|\n)[\s]*\d+[\.\)][\s]+\S'
+                number_matches = re.findall(number_pattern, content, re.MULTILINE)
+                total_items += len(number_matches)
+                
+                if total_items < rule_value:
+                    errors.append(f"Must have at least {rule_value} list items, found {total_items}. Please add more bullet points or numbered items.")
             
             elif rule_type == "max_passive_voice_ratio":
                 # Simple passive voice detection
