@@ -19,6 +19,11 @@ class ValidationHandler {
             this.generateAndValidate();
         });
 
+        // Copy output button
+        document.getElementById('copyOutput').addEventListener('click', () => {
+            this.copyOutputToClipboard();
+        });
+
         // Download report buttons
         document.getElementById('downloadHtmlReport').addEventListener('click', () => {
             this.downloadReport('html');
@@ -73,21 +78,11 @@ class ValidationHandler {
                 outputArea.value = 'Error: ' + result.message;
                 this.showValidationError(result.message);
                 updateOutputStatus('error');
-                
-                // Dispatch validation complete event
-                document.dispatchEvent(new CustomEvent('validationComplete', {
-                    detail: { isValid: false, errors: [result.message] }
-                }));
             }
         } catch (error) {
             outputArea.value = 'Error: ' + error.message;
             this.showValidationError(error.message);
             updateOutputStatus('error');
-            
-            // Dispatch validation complete event
-            document.dispatchEvent(new CustomEvent('validationComplete', {
-                detail: { isValid: false, errors: [error.message] }
-            }));
         } finally {
             // Restore button
             generateBtn.disabled = false;
@@ -139,29 +134,14 @@ class ValidationHandler {
                 
                 // Display validation result
                 this.displayValidationResult();
-                updateOutputStatus(this.validationResult.isValid ? 'success' : 'error');
-                
-                // Dispatch validation complete event
-                document.dispatchEvent(new CustomEvent('validationComplete', {
-                    detail: this.validationResult
-                }));
+                updateOutputStatus('success');
             } else {
                 this.showValidationError(data.message);
                 updateOutputStatus('error');
-                
-                // Dispatch validation complete event
-                document.dispatchEvent(new CustomEvent('validationComplete', {
-                    detail: { isValid: false, errors: [data.message] }
-                }));
             }
         } catch (error) {
             this.showValidationError(error.message);
             updateOutputStatus('error');
-            
-            // Dispatch validation complete event
-            document.dispatchEvent(new CustomEvent('validationComplete', {
-                detail: { isValid: false, errors: [error.message] }
-            }));
         }
     }
 
@@ -211,6 +191,23 @@ class ValidationHandler {
                 <strong>Error:</strong> ${message}
             </div>
         `;
+    }
+
+    /**
+     * Copy output to clipboard
+     */
+    copyOutputToClipboard() {
+        const outputArea = document.getElementById('llmOutput');
+        outputArea.select();
+        document.execCommand('copy');
+        
+        // Show feedback
+        const copyBtn = document.getElementById('copyOutput');
+        const originalIcon = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => {
+            copyBtn.innerHTML = originalIcon;
+        }, 2000);
     }
 
     /**
