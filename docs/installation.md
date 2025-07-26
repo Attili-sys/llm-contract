@@ -14,7 +14,15 @@ description: "How to install llm-contracts"
 
 ## Installation Options
 
-### From GitHub (Recommended for Latest Version)
+### From PyPI (Recommended)
+
+```bash
+pip install llm-contracts
+```
+
+### From GitHub (Development Version)
+
+For the latest development version:
 
 ```bash
 # Clone the repository
@@ -23,12 +31,6 @@ cd llm-contracts
 
 # Install in development mode
 pip install -e .
-```
-
-### Using pip (Coming Soon)
-
-```bash
-pip install llm-contracts
 ```
 
 ## Verify Installation

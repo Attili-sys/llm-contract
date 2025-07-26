@@ -7,6 +7,11 @@ description: "Stop trusting LLM output. Start validating it. Developer-first fra
 
 # LLMs Are Fluent, Confident, and **Totally Wrong**
 
+[![PyPI version](https://img.shields.io/pypi/v/llm-contracts)](https://pypi.org/project/llm-contracts/)
+[![Python](https://img.shields.io/badge/python-3.8+-blue)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/github/license/Maxamed/llm-contract)](https://github.com/Maxamed/llm-contract/blob/main/LICENSE)
+[![Tests](https://img.shields.io/badge/tests-84%25%20coverage-brightgreen)](https://github.com/Maxamed/llm-contract)
+
 ## Until Now.
 
 **llm-contracts** is the first developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs. Think of it as **ESLint + Pytest for AI responses** — without requiring a specific model or cloud API.
@@ -120,12 +125,7 @@ Generate beautiful HTML and Markdown validation reports for stakeholders, compli
 
 ### Installation
 ```bash
-# Clone the repository
-git clone https://github.com/Maxamed/llm-contract.git
-cd llm-contracts
-
-# Install the package
-pip install -e .
+pip install llm-contracts
 ```
 
 ### Quick Validation

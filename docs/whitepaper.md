@@ -7,7 +7,11 @@ description: "Deep dive: Why LLM validation matters and how llm-contracts solves
 
 # llm-contracts: Fluent, Confident, and Totally Wrong, Until Now
 
+[![PyPI version](https://img.shields.io/pypi/v/llm-contracts)](https://pypi.org/project/llm-contracts/) [![Python](https://img.shields.io/badge/python-3.8+-blue)](https://www.python.org/downloads/)
+
 *A white paper by Mohamed Jama, July 2025*
+
+**Now available on PyPI:** `pip install llm-contracts`
 
 *Implementation support and web interface by [Abdirahman Attila](https://github.com/Attili-sys)*
 

@@ -9,6 +9,14 @@ description: "Quick start guide - install llm-contracts and validate your first 
 
 This guide will walk you through the basic usage of llm-contracts to validate LLM outputs.
 
+## Installation
+
+First, install llm-contracts from PyPI:
+
+```bash
+pip install llm-contracts
+```
+
 ## Basic Concepts
 
 llm-contracts works by validating LLM outputs against predefined schemas and rules:

@@ -7,6 +7,8 @@ description: "Interactive web interface for testing and building validation sche
 
 # Web Frontend
 
+[![PyPI version](https://img.shields.io/pypi/v/llm-contracts)](https://pypi.org/project/llm-contracts/)
+
 llm-contracts includes a web-based frontend for testing and validating LLM outputs.
 
 ## Features

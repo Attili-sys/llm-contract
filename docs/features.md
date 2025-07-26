@@ -7,6 +7,8 @@ description: "Complete validation toolkit for LLM outputs - schema validation, c
 
 # Core Features
 
+[![PyPI version](https://img.shields.io/pypi/v/llm-contracts)](https://pypi.org/project/llm-contracts/) [![Python](https://img.shields.io/badge/python-3.8+-blue)](https://www.python.org/downloads/)
+
 Complete validation toolkit for LLM outputs
 
 llm-contracts provides everything you need to validate AI-generated content with confidence:

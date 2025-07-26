@@ -1,44 +1,48 @@
 # llm-contracts
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-84%25%20coverage-brightgreen.svg)](https://github.com/Maxamed/llm-contract)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Maxamed/llm-contract)
+![PyPI version](https://img.shields.io/pypi/v/llm-contracts)
+![Python](https://img.shields.io/badge/python-3.8+-blue)
+![License](https://img.shields.io/github/license/Maxamed/llm-contract)
+![Tests](https://img.shields.io/badge/tests-84%25%20coverage-brightgreen)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 
-> **Developer-first framework for validating LLM-generated outputs**
+> 🛡️ **"ESLint + Pytest" for AI responses** — Catch LLM mistakes before they reach production.  
+> Schema validation, content linting, and professional reports for any LLM.
 
-Think of it as "ESLint + Pytest" for AI responses — without requiring a specific model or cloud API.
+---
 
-**📖 [Full Documentation & Examples →](https://maxamed.github.io/llm-contract)**
-
-## Quick Start
-
-### Installation
+## 📦 Install
 
 ```bash
-# Clone the repository
-git clone https://github.com/Maxamed/llm-contract.git
-cd llm-contracts
-
-# Install in development mode
-pip install -e .
+pip install llm-contracts
 ```
 
-### Basic Usage
+---
 
-#### CLI
+## ⚡ Why `llm-contracts`?
 
+LLMs are **fluent, confident, and totally wrong** just often enough to break your app.
+
+- **Air Canada's chatbot** promised non-existent bereavement fares → Legal action
+- **CNET's AI** published financial advice with wrong interest rates → Public corrections  
+- **ChatGPT lawyer** submitted fake legal citations in court → Professional sanctions
+
+`llm-contracts` validates every AI response **before** it causes problems.
+
+---
+
+## 🚀 Quick Start
+
+### CLI
 ```bash
-# Validate a single file
+# Validate AI output against schema
 llm-validate output.json --schema schema.yaml
 
-# Generate reports
+# Generate professional reports
 llm-validate output.json --schema schema.yaml --html-report report.html
-llm-validate output.json --schema schema.yaml --md-report report.md
 ```
 
-#### Python API
-
+### Python API
 ```python
 from llm_contracts import contracts
 
@@ -46,16 +50,28 @@ from llm_contracts import contracts
 result = contracts.validate(data, "schema.yaml")
 
 if not result.is_valid:
-    print("Validation failed:")
+    print("AI failed validation:")
     for error in result.errors:
         print(f"  - {error}")
 
 # Generate reports
 contracts.generate_report(result, "report.html", "schema.yaml", format="html")
-contracts.generate_report(result, "report.md", "schema.yaml", format="markdown")
 ```
 
-### Example Schema
+---
+
+## ✅ Key Features
+
+* **Schema Validation** — Ensure proper JSON/YAML structure and data types
+* **Content Linting** — Check keywords, tone, word count, patterns, quality rules  
+* **Professional Reports** — Beautiful HTML and Markdown validation reports
+* **Framework Agnostic** — Works with OpenAI, Anthropic, local models, any LLM
+* **CLI + Python API** — Use in scripts or integrate into applications
+* **Zero Vendor Lock-in** — Pure validation logic, no external API calls required
+
+---
+
+## 📋 Example Schema
 
 ```yaml
 schema:
@@ -74,61 +90,35 @@ rules:
   - word_count_max: 500
 ```
 
-## Features
+**Result:** Every AI response gets validated before reaching your users. **No more silent failures.**
 
-- **Schema-based validation** - JSON Schema validation for structure
-- **Content linting rules** - Keyword requirements, patterns, quality checks
-- **Professional reports** - HTML and Markdown validation reports
-- **CLI and Python API** - Use in scripts or integrate into applications
-- **Framework agnostic** - Works with any LLM or application
+---
 
-## Web Frontend (Optional)
+## 📚 Documentation & Links
 
-Run a web interface for testing and building schemas:
+* 📖 [Complete Documentation & Whitepaper](https://maxamed.github.io/llm-contract/)
+* 🚀 [Getting Started Guide](https://maxamed.github.io/llm-contract/getting-started)
+* 💡 [Real-World Examples](https://maxamed.github.io/llm-contract/examples)
+* 🛠 [GitHub Source](https://github.com/Maxamed/llm-contract)
+* 🐛 [Report Issues](https://github.com/Maxamed/llm-contract/issues)
 
-```bash
-cd frontend
-pip install -r requirements.txt
-python server.py
-# Open index.html in your browser
-```
+---
 
-## Documentation & Examples
+## 🤝 Contributors
 
-- **[Complete Documentation](https://maxamed.github.io/llm-contract)** - Full guide and examples
-- **[examples/](examples/)** - Ready-to-run examples
-- **[API Reference](API.md)** - Complete API documentation
-- **[Contributing](CONTRIBUTING.md)** - Development setup and guidelines
-
-## Testing
-
-```bash
-# Run all tests
-python -m pytest tests/
-
-# Run with coverage
-python -m pytest --cov=llm_contracts tests/
-```
-
-## Contributors
-
-This project was created and is maintained by **[Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)**.
+**Created by [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)** - Built for developers shipping AI features in production.
 
 **Major Contributors:**
 - **[Abdirahman Attila](https://github.com/Attili-sys)** - Frontend web interface, comprehensive documentation website, enhanced testing suite, and Jekyll/GitHub Pages setup
 
-See [CONTRIBUTORS.md](CONTRIBUTORS.md) for detailed contribution history.
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Created By
-
-**[Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)** - Built for developers shipping AI features in production.
+We welcome contributions! See [CONTRIBUTING.md](https://github.com/Maxamed/llm-contract/blob/main/CONTRIBUTING.md) for guidelines.
 
 ---
 
-*For detailed examples, use cases, and the complete whitepaper, visit [our documentation site](https://maxamed.github.io/llm-contract).* 
+## 🏷 License
+
+MIT © Mohamed Jama - see [LICENSE](https://github.com/Maxamed/llm-contract/blob/main/LICENSE) file for details.
+
+---
+
+**Stop hoping your AI gets it right. Start knowing it does.** 

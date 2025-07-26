@@ -7,7 +7,15 @@ description: "Real-world examples - e-commerce, support, marketing, and more"
 
 # Examples
 
+[![PyPI version](https://img.shields.io/pypi/v/llm-contracts)](https://pypi.org/project/llm-contracts/) 
+
 Here are some practical examples of using llm-contracts in different scenarios.
+
+## Installation
+
+```bash
+pip install llm-contracts
+```
 
 ## Basic Validation Example
 

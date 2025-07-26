@@ -7,7 +7,15 @@ description: "Complete API documentation for Python SDK and CLI"
 
 # API Reference
 
+[![PyPI version](https://img.shields.io/pypi/v/llm-contracts)](https://pypi.org/project/llm-contracts/) [![Python](https://img.shields.io/badge/python-3.8+-blue)](https://www.python.org/downloads/)
+
 This page documents the core APIs of the llm-contracts library.
+
+## Installation
+
+```bash
+pip install llm-contracts
+```
 
 ## CLI Commands
 
