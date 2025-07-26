@@ -155,6 +155,7 @@ if not result.is_valid:
 - **[⚡ Core Features](features)** - Schema validation, content linting, and reporting
 - **[📚 Real Use Cases](examples)** - E-commerce, support, marketing, and more
 - **[🌐 Web Interface](frontend)** - Try validation in your browser
+- **[🚀 Roadmap](roadmap)** - Upcoming features and development plans
 - **[📄 Complete Whitepaper](whitepaper)** - Deep dive into the business case
 
 ---
