@@ -13,7 +13,7 @@ llm-contracts provides everything you need to validate AI-generated content with
 
 ---
 
-## 🔍 Schema-Based Validation
+## Schema-Based Validation
 
 Define the exact structure your application expects:
 
@@ -45,7 +45,7 @@ schema:
 
 ---
 
-## 📝 Content Linting Rules
+## Content Linting Rules
 
 Ensure content quality and compliance:
 
@@ -77,23 +77,23 @@ rules:
 
 ---
 
-## 📊 Professional Reports
+## Professional Reports
 
 Generate detailed validation reports for stakeholders:
 
 ### HTML Reports
 Beautiful, responsive reports with:
-- ✅ Visual error highlighting
-- 📈 Success rate metrics
-- 🔍 Detailed error categorization
-- 📱 Mobile-friendly design
+- Visual error highlighting
+- Success rate metrics
+- Detailed error categorization
+- Mobile-friendly design
 
 ### Markdown Reports
 Perfect for CI/CD and documentation:
-- ✅ Version control friendly
-- 📝 Integration with pull requests
-- 🤖 Automated compliance checking
-- 📋 Audit trail documentation
+- Version control friendly
+- Integration with pull requests
+- Automated compliance checking
+- Audit trail documentation
 
 ```bash
 # Generate both formats
@@ -104,7 +104,7 @@ llm-validate output.json --schema schema.yaml \
 
 ---
 
-## 🔧 Flexible Integration
+## Flexible Integration
 
 ### CLI Interface
 ```bash
@@ -136,14 +136,14 @@ except ValidationError as e:
 
 ### Web Interface
 Interactive schema builder and testing interface:
-- 🎨 Visual schema builder
-- 🧪 Live validation testing
-- 📚 Template library
-- 🤖 AI integration for content generation
+- Visual schema builder
+- Live validation testing
+- Template library
+- AI integration for content generation
 
 ---
 
-## 🚀 Advanced Features
+## Advanced Features
 
 ### Rule Bundles
 Create reusable validation rule sets:
@@ -206,24 +206,24 @@ def generate_content():
 
 ---
 
-## 🎯 Why It Works
+## Why It Works
 
 ### Framework Agnostic
-- ✅ Works with **any LLM** (OpenAI, Anthropic, local models)
-- ✅ Compatible with **any framework** (LangChain, direct APIs)
-- ✅ No vendor lock-in or API dependencies
+- Works with **any LLM** (OpenAI, Anthropic, local models)
+- Compatible with **any framework** (LangChain, direct APIs)
+- No vendor lock-in or API dependencies
 
 ### Production Ready
-- ✅ Comprehensive error handling
-- ✅ Performance optimized
-- ✅ Extensive test coverage (84%)
-- ✅ CI/CD integration support
+- Comprehensive error handling
+- Performance optimized
+- Extensive test coverage (84%)
+- CI/CD integration support
 
 ### Developer Friendly
-- ✅ Clear error messages
-- ✅ Extensive documentation
-- ✅ Rich examples library
-- ✅ Active community support
+- Clear error messages
+- Extensive documentation
+- Rich examples library
+- Active community support
 
 ---
 

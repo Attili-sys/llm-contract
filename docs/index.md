@@ -26,10 +26,10 @@ description: "Stop trusting LLM output. Start validating it. Developer-first fra
 **Sound familiar?**
 
 ### Real-World AI Failures:
-- ✈️ **Air Canada's chatbot** promised non-existent bereavement fares → Legal action
-- 💰 **CNET's AI writer** published financial advice with wrong interest rates → Public corrections
-- ⚖️ **ChatGPT lawyer** submitted fake legal citations in court → Professional sanctions
-- 🛒 **E-commerce AI** invented product features that didn't exist → Customer complaints
+- **Air Canada's chatbot** promised non-existent bereavement fares → Legal action
+- **CNET's AI writer** published financial advice with wrong interest rates → Public corrections
+- **ChatGPT lawyer** submitted fake legal citations in court → Professional sanctions
+- **E-commerce AI** invented product features that didn't exist → Customer complaints
 
 **The pattern:** LLMs generate responses that **look perfect** but **break everything.**
 
@@ -62,7 +62,7 @@ rules:
 
 ## See It In Action
 
-### ❌ **Before llm-contracts:**
+### **Before llm-contracts:**
 ```json
 {
   "product_description": "[INSERT_PRODUCT_NAME] is the best quality item you'll ever buy! We guarantee 100% satisfaction always and forever. Our unlimited warranty covers everything!"
@@ -70,12 +70,12 @@ rules:
 ```
 *Passes the "looks good" test. Breaks everything else.*
 
-### ✅ **After llm-contracts:**
+### **After llm-contracts:**
 ```yaml
-✅ Schema validation: PASSED
-❌ Placeholder text detected: "[INSERT_PRODUCT_NAME]"
-❌ Forbidden keywords: "guarantee", "always", "unlimited"
-❌ Missing required: "30-day warranty", "return policy"
+Schema validation: PASSED
+Placeholder text detected: "[INSERT_PRODUCT_NAME]"
+Forbidden keywords: "guarantee", "always", "unlimited"
+Missing required: "30-day warranty", "return policy"
 
 VALIDATION FAILED - Output rejected
 ```
@@ -85,16 +85,16 @@ VALIDATION FAILED - Output rejected
 
 ## Why Developers Choose llm-contracts
 
-### 🚀 **Framework-Agnostic**
+### **Framework-Agnostic**
 Works with **any LLM** (OpenAI, Anthropic, local models) and **any framework** (LangChain, direct API calls, custom implementations).
 
-### 🛡️ **Production-Ready**
+### **Production-Ready**
 Built by developers who've shipped AI features at scale. Handles edge cases, provides detailed error reporting, and integrates with your existing CI/CD.
 
-### 🎯 **Zero Vendor Lock-in**
+### **Zero Vendor Lock-in**
 No API calls to external services. No model-specific prompting tricks. Just pure validation logic that runs anywhere Python runs.
 
-### 📊 **Professional Reports**
+### **Professional Reports**
 Generate beautiful HTML and Markdown validation reports for stakeholders, compliance, and debugging.
 
 ---
@@ -151,12 +151,12 @@ if not result.is_valid:
 
 ## Learn More
 
-- **[🎯 The Problem](whitepaper#the-problem-with-trusting-llms)** - Why LLM validation matters
-- **[⚡ Core Features](features)** - Schema validation, content linting, and reporting
-- **[📚 Real Use Cases](examples)** - E-commerce, support, marketing, and more
-- **[🌐 Web Interface](frontend)** - Try validation in your browser
-- **[🚀 Roadmap](roadmap)** - Upcoming features and development plans
-- **[📄 Complete Whitepaper](whitepaper)** - Deep dive into the business case
+- **[The Problem](whitepaper#the-problem-with-trusting-llms)** - Why LLM validation matters
+- **[Core Features](features)** - Schema validation, content linting, and reporting
+- **[Real Use Cases](examples)** - E-commerce, support, marketing, and more
+- **[Web Interface](frontend)** - Try validation in your browser
+- **[Roadmap](roadmap)** - Upcoming features and development plans
+- **[Complete Whitepaper](whitepaper)** - Deep dive into the business case
 
 ---
 

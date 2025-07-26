@@ -11,7 +11,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🚀 **Version 0.2.0** - *Q4 2025*
+## **Version 0.2.0** - *Q4 2025*
 
 ### **Enhanced Contract Types**
 - **PII Detection** - Automatically detect and flag personally identifiable information
@@ -20,7 +20,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 - **Fact Checking** - Cross-reference claims against knowledge bases
 - **Language Detection** - Ensure output is in the expected language
 
-### **Smart Retry Logic** ⚡
+### **Smart Retry Logic**
 - **Automatic Retry** - Configurable retry attempts for failed validations
 - **Progressive Backoff** - Intelligent retry timing to avoid rate limits  
 - **Fallback Strategies** - Use alternative models when primary fails
@@ -28,7 +28,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🔧 **Version 0.3.0** - *Q1 2026*
+## **Version 0.3.0** - *Q1 2026*
 
 ### **Framework Integrations**
 - **LangChain Native** - Built-in validators for LangChain chains
@@ -46,7 +46,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 📊 **Version 0.4.0** - *Q2 2026*
+## **Version 0.4.0** - *Q2 2026*
 
 ### **Enterprise Features**
 - **Real-time API** - Cloud-hosted validation service
@@ -64,7 +64,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🌐 **Version 0.5.0** - *Q3 2026*
+## **Version 0.5.0** - *Q3 2026*
 
 ### **Cloud Integrations**
 - **AWS Lambda** - Serverless validation functions
@@ -82,7 +82,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🎯 **Version 1.0.0** - *Q4 2026*
+## **Version 1.0.0** - *Q4 2026*
 
 ### **Visual Schema Builder 2.0**
 - **Drag-and-Drop Interface** - No-code schema creation
@@ -100,7 +100,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🔮 **Future Vision** - *Beyond 1.0*
+## **Future Vision** - *Beyond 1.0*
 
 ### **Advanced AI Features**
 - **Self-Improving Rules** - ML-powered rule optimization
@@ -118,15 +118,15 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🤝 **How You Can Help**
+## **How You Can Help**
 
 ### **Community Priorities**
 Vote on features that matter most to your use case:
 
-- 🗳️ **[Feature Requests](https://github.com/Maxamed/llm-contract/issues)** - Tell us what you need
-- 💬 **[Discussions](https://github.com/Maxamed/llm-contract/discussions)** - Share your validation challenges
-- 🐛 **[Bug Reports](https://github.com/Maxamed/llm-contract/issues)** - Help us improve reliability
-- 📖 **[Documentation](https://github.com/Maxamed/llm-contract/blob/main/CONTRIBUTING.md)** - Contribute examples and guides
+- **[Feature Requests](https://github.com/Maxamed/llm-contract/issues)** - Tell us what you need
+- **[Discussions](https://github.com/Maxamed/llm-contract/discussions)** - Share your validation challenges
+- **[Bug Reports](https://github.com/Maxamed/llm-contract/issues)** - Help us improve reliability
+- **[Documentation](https://github.com/Maxamed/llm-contract/blob/main/CONTRIBUTING.md)** - Contribute examples and guides
 
 ### **Contributing**
 - **Code Contributions** - Implement features from this roadmap
@@ -136,7 +136,7 @@ Vote on features that matter most to your use case:
 
 ---
 
-## 📅 **Release Schedule**
+## **Release Schedule**
 
 | Version | Target Date | Focus Area |
 |---------|-------------|------------|
@@ -150,7 +150,7 @@ Vote on features that matter most to your use case:
 
 ---
 
-## 💡 **Suggest a Feature**
+## **Suggest a Feature**
 
 Have an idea that's not on this roadmap? We'd love to hear from you!
 
