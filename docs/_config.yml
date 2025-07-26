@@ -1,9 +1,9 @@
-title: "llm//contracts"
-description: "Developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs. Think of it as ESLint + Pytest for AI responses."
+title: "llm-contracts"
+description: "Stop trusting LLM output. Start validating it. Developer-first framework for catching AI mistakes before they reach production."
 tagline: "Stop trusting LLM output. Start validating it."
 
-# Use a more modern theme
-theme: just-the-docs
+# Use GitHub Pages supported theme
+theme: jekyll-theme-cayman
 
 # Site URL
 url: https://maxamed.github.io/llm-contract
@@ -21,65 +21,48 @@ contributors:
     github: "Attili-sys"
     role: "Frontend interface, documentation website, testing infrastructure"
 
-# Enhanced navigation
-aux_links:
-  "🚀 Get Started":
-    - "https://github.com/Maxamed/llm-contract"
-  "📊 GitHub":
-    - "https://github.com/Maxamed/llm-contract"
+# GitHub repository
+repository: "Maxamed/llm-contract"
 
-# Color scheme - more professional
-color_scheme: light
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Enhanced search
+# Enable search (if supported by theme)
 search_enabled: true
-search:
-  heading_level: 2
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 10
 
 # Code highlighting
+highlighter: rouge
+markdown: kramdown
 kramdown:
+  input: GFM
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: false
-
-# Enable copy code button
-enable_copy_code_button: true
-
-# Navigation structure
-nav_sort: case_insensitive
-
-# Footer content
-footer_content: "Copyright &copy; 2025 Mohamed Jama. Distributed under an <a href=\"https://github.com/Maxamed/llm-contract/blob/main/LICENSE\">MIT license.</a> | <a href=\"https://www.linkedin.com/in/mohamedjama/\">LinkedIn</a><br><small>Major contributions by <a href=\"https://github.com/Attili-sys\">Abdirahman Attila</a></small>"
-
-# Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
-
-# GitHub edit links
-gh_edit_link: true
-gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/Maxamed/llm-contract"
-gh_edit_branch: "main"
-gh_edit_view_mode: "tree"
-gh_edit_source: docs
-
-# Enhanced features
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
 
 # SEO
 lang: en-US
-logo: "/assets/images/logo.png"
+twitter:
+  username: # Add if you have Twitter
+  card: summary
 
 # Social
 social:
   name: Mohamed Jama
   links:
     - https://github.com/Maxamed
-    - https://www.linkedin.com/in/mohamedjama/ 
+    - https://www.linkedin.com/in/mohamedjama/
+
+# Build settings
+sass:
+  style: compressed
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/ 

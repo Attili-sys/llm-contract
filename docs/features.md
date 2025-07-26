@@ -1,13 +1,11 @@
 ---
 layout: default
 title: Core Features
-nav_order: 3
 description: "Complete validation toolkit for LLM outputs - schema validation, content linting, and professional reporting"
 ---
 
 # Core Features
 
-{: .fs-6 .fw-300 }
 Complete validation toolkit for LLM outputs
 
 llm-contracts provides everything you need to validate AI-generated content with confidence:

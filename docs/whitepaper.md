@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Whitepaper
-nav_order: 7
 description: "Deep dive: Why LLM validation matters and how llm-contracts solves production AI challenges"
 ---
 

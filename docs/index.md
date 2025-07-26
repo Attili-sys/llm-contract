@@ -1,27 +1,22 @@
 ---
 layout: default
 title: Home
-nav_order: 1
 description: "Stop trusting LLM output. Start validating it. Developer-first framework for catching AI mistakes before they reach production."
-permalink: /
 ---
 
 # LLMs Are Fluent, Confident, and **Totally Wrong**
-
-{: .fs-6 .fw-300 }
 
 ## Until Now.
 
 **llm-contracts** is the first developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs. Think of it as **ESLint + Pytest for AI responses** — without requiring a specific model or cloud API.
 
-[Get Started on GitHub](https://github.com/Maxamed/llm-contract){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Read the Whitepaper](whitepaper){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get Started on GitHub](https://github.com/Maxamed/llm-contract){: .btn}
+[Read the Whitepaper](whitepaper){: .btn}
 
 ---
 
 ## The Problem That Keeps You Up At Night
 
-{: .highlight }
 > **You deployed an AI feature last week. It's working perfectly.**  
 > **Except when it confidently tells customers about warranty policies that don't exist.**  
 > **Or invents product specifications.**  
@@ -40,8 +35,6 @@ permalink: /
 ---
 
 ## The Solution: Contracts for AI Output
-
-{: .fs-6 }
 
 Instead of hoping your AI "gets it right," **llm-contracts** lets you define exactly what "right" looks like:
 
@@ -116,7 +109,6 @@ Generate beautiful HTML and Markdown validation reports for stakeholders, compli
 | **Pydantic** | Python type validation | We validate **content quality**, not just types |
 | **Manual Review** | Human checks everything | We **automate validation** at machine speed |
 
-{: .highlight }
 > **Other tools try to fix LLM output.**  
 > **llm-contracts asks:** "Did the AI follow the rules?"  
 > **If not, we fail it — no excuses.**
@@ -151,8 +143,8 @@ if not result.is_valid:
     print(f"AI failed validation: {result.errors}")
 ```
 
-[View Full Documentation](getting-started){: .btn .btn-outline }
-[Try the Web Interface](frontend){: .btn .btn-outline }
+[View Full Documentation](getting-started)
+[Try the Web Interface](frontend)
 
 ---
 
@@ -166,17 +158,13 @@ if not result.is_valid:
 
 ---
 
-{: .fs-3 .text-center .mt-8 }
 **Stop hoping your AI gets it right.**
 **Start knowing it does.**
 
-{: .text-center }
-[Get Started on GitHub →](https://github.com/Maxamed/llm-contract){: .btn .btn-primary .fs-6 }
+[Get Started on GitHub →](https://github.com/Maxamed/llm-contract)
 
 ---
 
-{: .fs-2 .text-grey-dk-100 .text-center }
 **Created by [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/) for developers who ship AI features that actually work.**
 
-{: .fs-1 .text-grey-dk-200 .text-center .mt-4 }
 *Major contributions by [Abdirahman Attila](https://github.com/Attili-sys) - Frontend interface, documentation website, and testing infrastructure.* 
