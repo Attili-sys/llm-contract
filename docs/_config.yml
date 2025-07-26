@@ -2,8 +2,8 @@ title: "llm-contracts"
 description: "Stop trusting LLM output. Start validating it. Developer-first framework for catching AI mistakes before they reach production."
 tagline: "Stop trusting LLM output. Start validating it."
 
-# Use GitHub Pages supported theme
-theme: jekyll-theme-cayman
+# Use remote theme (GitHub Pages recommended)
+remote_theme: pages-themes/cayman@v0.2.0
 
 # Site URL
 url: https://maxamed.github.io/llm-contract
@@ -26,6 +26,7 @@ repository: "Maxamed/llm-contract"
 
 # Plugins (GitHub Pages compatible)
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
