@@ -14,5 +14,6 @@ minima:
     - frontend.md
     - api-reference.md  
     - whitepaper.md
+    - solidarity.md
     - installation.md
     - roadmap.md 

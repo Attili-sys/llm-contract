@@ -6,14 +6,12 @@
 ![Tests](https://img.shields.io/badge/tests-84%25%20coverage-brightgreen)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 
-> **"ESLint + Pytest" for AI responses** — Catch LLM mistakes before they reach production.  
+> 🛡️ **"ESLint + Pytest" for AI responses** — Catch LLM mistakes before they reach production.  
 > Schema validation, content linting, and professional reports for any LLM.
-
-**Website:** https://maxamed.github.io/llm-contract/
 
 ---
 
-## Install
+## 📦 Install
 
 ```bash
 pip install llm-contracts
@@ -21,7 +19,7 @@ pip install llm-contracts
 
 ---
 
-## Why `llm-contracts`?
+## ⚡ Why `llm-contracts`?
 
 LLMs are **fluent, confident, and totally wrong** just often enough to break your app.
 
@@ -33,7 +31,7 @@ LLMs are **fluent, confident, and totally wrong** just often enough to break you
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### CLI
 ```bash
@@ -52,69 +50,96 @@ from llm_contracts import contracts
 result = contracts.validate(data, "schema.yaml")
 
 if not result.is_valid:
-    print("Validation failed:")
+    print("AI failed validation:")
     for error in result.errors:
         print(f"  - {error}")
 
 # Generate reports
 contracts.generate_report(result, "report.html", "schema.yaml", format="html")
-contracts.generate_report(result, "report.md", "schema.yaml", format="markdown")
 ```
 
 ---
 
-## Key Features
+## ✅ Key Features
 
-- **Schema-based validation** - Enforce structure, types, and constraints
-- **Text linting rules** - Content quality, keywords, patterns, tone analysis
-- **Professional reports** - HTML and Markdown validation reports
-- **Framework-agnostic** - Works with any LLM (OpenAI, Anthropic, local models)
-- **Zero dependencies** - No external API calls, runs anywhere Python runs
-- **CLI + Python SDK** - Use from command line or integrate programmatically
+* **Schema Validation** — Ensure proper JSON/YAML structure and data types
+* **Content Linting** — Check keywords, tone, word count, patterns, quality rules  
+* **Professional Reports** — Beautiful HTML and Markdown validation reports
+* **Framework Agnostic** — Works with OpenAI, Anthropic, local models, any LLM
+* **CLI + Python API** — Use in scripts or integrate into applications
+* **Zero Vendor Lock-in** — Pure validation logic, no external API calls required
 
 ---
 
-## Example Schema
+## 📋 Example Schema
 
 ```yaml
 schema:
-  warranty_period:
+  title:
     type: str
-    pattern: "^(30|90|365) days?$"
+    min_length: 10
+  description:
+    type: str
+    min_length: 100
 
 rules:
-  - keyword_must_include: ["warranty", "return policy"]  
-  - keyword_must_not_include: ["guaranteed", "always", "never"]
-  - no_placeholder_text: "\\[INSERT_.*\\]"
+  - keyword_must_include: ["quality", "premium"]
+  - keyword_must_not_include: ["cheap", "defective"]
+  - no_placeholder_text: "\\[YOUR_TEXT_HERE\\]"
   - word_count_min: 100
-  - phrase_proximity:
-      terms: ["warranty", "30 days"]
-      max_distance: 20
+  - word_count_max: 500
 ```
 
----
-
-## Documentation & Links
-
-* [Complete Documentation & Whitepaper](https://maxamed.github.io/llm-contract/)
-* [Getting Started Guide](https://maxamed.github.io/llm-contract/getting-started)
-* [Real-World Examples](https://maxamed.github.io/llm-contract/examples)
-* [API Reference](https://maxamed.github.io/llm-contract/api-reference)
-* [Web Interface](https://maxamed.github.io/llm-contract/frontend)
+**Result:** Every AI response gets validated before reaching your users. **No more silent failures.**
 
 ---
 
-## Contributors
+## 📚 Documentation & Links
 
-This project was created and is maintained by **[Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)**.
+* 📖 [Complete Documentation & Whitepaper](https://maxamed.github.io/llm-contract/)
+* 🚀 [Getting Started Guide](https://maxamed.github.io/llm-contract/getting-started)
+* 💡 [Real-World Examples](https://maxamed.github.io/llm-contract/examples)
+* 🛠 [GitHub Source](https://github.com/Maxamed/llm-contract)
+* 🐛 [Report Issues](https://github.com/Maxamed/llm-contract/issues)
+
+---
+
+## 🤝 Contributors
+
+**Created by [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)** - Built for developers shipping AI features in production.
 
 **Major Contributors:**
 - **[Abdirahman Attila](https://github.com/Attili-sys)** - Frontend web interface, comprehensive documentation website, enhanced testing suite, and Jekyll/GitHub Pages setup
 
-See [CONTRIBUTORS.md](CONTRIBUTORS.md) for detailed contribution history.
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! See [CONTRIBUTING.md](https://github.com/Maxamed/llm-contract/blob/main/CONTRIBUTING.md) for guidelines.
 
 ---
 
-**Built by developers who ship AI features that actually work.** 
+## 🏷 License
+
+MIT © Mohamed Jama - see [LICENSE](https://github.com/Maxamed/llm-contract/blob/main/LICENSE) file for details.
+
+---
+
+## Solidarity
+
+I believe developers don't live outside the world — we help shape it.
+
+I stand in full solidarity with the people of Palestine, especially in Gaza, who continue to endure conditions no human should face: siege, displacement, and the systematic erasure of life and dignity.
+
+This is not about politics. It's about humanity.
+
+Silence is not neutrality.
+
+Learn more and support:
+
+- [Decolonize Palestine](https://decolonizepalestine.com/)
+- [Visualizing Palestine](https://visualizingpalestine.org/)
+- [Medical Aid for Palestinians (MAP)](https://www.map.org.uk/)
+- [Palestine Children's Relief Fund (PCRF)](https://www.pcrf.net/)
+- [Al-Haq – Palestinian Human Rights Org](https://www.alhaq.org/)
+- [UNRWA Emergency Appeal – Gaza](https://donate.unrwa.org/-landing-page/en_EN)
+
+---
+
+**Stop hoping your AI gets it right. Start knowing it does.** 
