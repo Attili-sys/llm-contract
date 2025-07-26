@@ -11,7 +11,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🚀 **Version 0.2.0** - *Q2 2025*
+## 🚀 **Version 0.2.0** - *Q4 2025*
 
 ### **Enhanced Contract Types**
 - **PII Detection** - Automatically detect and flag personally identifiable information
@@ -28,7 +28,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🔧 **Version 0.3.0** - *Q3 2025*
+## 🔧 **Version 0.3.0** - *Q1 2026*
 
 ### **Framework Integrations**
 - **LangChain Native** - Built-in validators for LangChain chains
@@ -46,7 +46,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 📊 **Version 0.4.0** - *Q4 2025*
+## 📊 **Version 0.4.0** - *Q2 2026*
 
 ### **Enterprise Features**
 - **Real-time API** - Cloud-hosted validation service
@@ -64,7 +64,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🌐 **Version 0.5.0** - *Q1 2026*
+## 🌐 **Version 0.5.0** - *Q3 2026*
 
 ### **Cloud Integrations**
 - **AWS Lambda** - Serverless validation functions
@@ -82,7 +82,7 @@ Our vision is to make llm-contracts the **industry standard** for LLM output val
 
 ---
 
-## 🎯 **Version 1.0.0** - *Q2 2026*
+## 🎯 **Version 1.0.0** - *Q4 2026*
 
 ### **Visual Schema Builder 2.0**
 - **Drag-and-Drop Interface** - No-code schema creation
@@ -140,11 +140,11 @@ Vote on features that matter most to your use case:
 
 | Version | Target Date | Focus Area |
 |---------|-------------|------------|
-| **0.2.0** | Q2 2025 | Enhanced validation types & retry logic |
-| **0.3.0** | Q3 2025 | Framework integrations & performance |
-| **0.4.0** | Q4 2025 | Enterprise features & output formats |
-| **0.5.0** | Q1 2026 | Cloud integrations & CI/CD |
-| **1.0.0** | Q2 2026 | Visual tools & monitoring |
+| **0.2.0** | Q4 2025 | Enhanced validation types & retry logic |
+| **0.3.0** | Q1 2026 | Framework integrations & performance |
+| **0.4.0** | Q2 2026 | Enterprise features & output formats |
+| **0.5.0** | Q3 2026 | Cloud integrations & CI/CD |
+| **1.0.0** | Q4 2026 | Visual tools & monitoring |
 
 *Dates are estimates and may adjust based on community feedback and development priorities.*
 
@@ -162,4 +162,4 @@ Have an idea that's not on this roadmap? We'd love to hear from you!
 
 **This roadmap represents our current vision and may evolve based on community needs, technical discoveries, and industry developments.**
 
-*Last updated: January 2025* 
+*Last updated: July 2025* 
