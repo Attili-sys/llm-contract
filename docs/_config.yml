@@ -1,9 +1,8 @@
 title: "llm-contracts"
 description: "Stop trusting LLM output. Start validating it. Developer-first framework for catching AI mistakes before they reach production."
-tagline: "Stop trusting LLM output. Start validating it."
 
-# Use remote theme (GitHub Pages recommended)
-remote_theme: pages-themes/cayman@v0.2.0
+# Use most reliable GitHub Pages theme
+theme: minima
 
 # Site URL
 url: https://maxamed.github.io/llm-contract
@@ -13,57 +12,27 @@ baseurl: ""
 author:
   name: "Mohamed Jama"
   email: "mohamed.jama@gmail.com"
-  url: "https://www.linkedin.com/in/mohamedjama/"
 
-# Contributors
-contributors:
-  - name: "Abdirahman Attila"
-    github: "Attili-sys"
-    role: "Frontend interface, documentation website, testing infrastructure"
-
-# GitHub repository
+# GitHub repository  
 repository: "Maxamed/llm-contract"
 
 # Plugins (GitHub Pages compatible)
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Enable search (if supported by theme)
-search_enabled: true
+# Minima theme settings
+minima:
+  skin: dark
 
 # Code highlighting
 highlighter: rouge
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
 # SEO
 lang: en-US
-twitter:
-  username: # Add if you have Twitter
-  card: summary
-
-# Social
-social:
-  name: Mohamed Jama
-  links:
-    - https://github.com/Maxamed
-    - https://www.linkedin.com/in/mohamedjama/
 
 # Build settings
 sass:
-  style: compressed
-
-# Exclude files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/ 
+  style: compressed 
