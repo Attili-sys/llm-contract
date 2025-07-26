@@ -1,4 +1,18 @@
 title: llm-contracts
 description: Developer-first framework for validating LLM-generated outputs
 
-theme: minima 
+theme: minima
+
+# Minima theme configuration
+minima:
+  # Use custom navigation ordering
+  header_pages:
+    - index.md
+    - getting-started.md
+    - features.md
+    - examples.md
+    - frontend.md
+    - api-reference.md  
+    - whitepaper.md
+    - installation.md
+    - roadmap.md 

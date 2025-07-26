@@ -1,3 +1,9 @@
+---
+layout: default
+title: Documentation Setup
+nav_exclude: true
+---
+
 # llm-contracts Documentation
 
 This directory contains the documentation for the llm-contracts project, published using GitHub Pages.
