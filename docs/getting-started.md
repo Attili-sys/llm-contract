@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Getting Started
-nav_order: 3
-description: "Getting started with llm-contracts"
+nav_order: 2
+description: "Quick start guide - install llm-contracts and validate your first LLM output"
 ---
 
 # Getting Started with llm-contracts
@@ -99,6 +99,6 @@ rules:
 
 ## Next Steps
 
-- Check out the [Examples](examples.html) for more use cases
-- Learn about [Core Features](features.html) for advanced usage
-- Try the [Web Frontend](frontend.html) for a visual interface 
+- Check out the [Examples](examples) for more use cases
+- Learn about [Core Features](features) for advanced usage
+- Try the [Web Frontend](frontend) for a visual interface 

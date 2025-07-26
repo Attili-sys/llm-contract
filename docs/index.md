@@ -2,62 +2,181 @@
 layout: default
 title: Home
 nav_order: 1
-description: "LLM Contracts - Developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs."
+description: "Stop trusting LLM output. Start validating it. Developer-first framework for catching AI mistakes before they reach production."
 permalink: /
 ---
 
-# llm//contracts
+# LLMs Are Fluent, Confident, and **Totally Wrong**
 
-> **LLM Output Validation, Linting, and Assertion Layer**
+{: .fs-6 .fw-300 }
 
-`llm-contracts` is a developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs. Think of it as "ESLint + Pytest" for AI responses — without requiring a specific model or cloud API.
+## Until Now.
 
-If you're building with LLMs, this was made for you — by someone who actually uses them in production.
+**llm-contracts** is the first developer-first framework for validating, linting, and asserting the correctness of LLM-generated outputs. Think of it as **ESLint + Pytest for AI responses** — without requiring a specific model or cloud API.
 
-**Created by [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/)**
+[Get Started on GitHub](https://github.com/Maxamed/llm-contract){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Read the Whitepaper](whitepaper){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-## What It Does
+---
 
-We got burned too many times by "looks right" AI responses that quietly broke apps. This isn't another GPT wrapper — it's your test suite for machine output.
+## The Problem That Keeps You Up At Night
 
-LLMs follow patterns, not instructions. What "looks right" can silently break apps. `llm-contracts` exists to:
+{: .highlight }
+> **You deployed an AI feature last week. It's working perfectly.**  
+> **Except when it confidently tells customers about warranty policies that don't exist.**  
+> **Or invents product specifications.**  
+> **Or promises shipping to countries you don't serve.**
 
-- **Validate structure** (JSON, Markdown, text)
-- **Lint content** (phrases, tone, repetition)
-- **Assert semantic logic** (summaries, tool use)
-- **Repair or reject** invalid outputs
+**Sound familiar?**
 
-This is a safety net between prompts and production.
+### Real-World AI Failures:
+- ✈️ **Air Canada's chatbot** promised non-existent bereavement fares → Legal action
+- 💰 **CNET's AI writer** published financial advice with wrong interest rates → Public corrections
+- ⚖️ **ChatGPT lawyer** submitted fake legal citations in court → Professional sanctions
+- 🛒 **E-commerce AI** invented product features that didn't exist → Customer complaints
 
-## Quick Links
+**The pattern:** LLMs generate responses that **look perfect** but **break everything.**
 
-- [Installation Guide](installation.html)
-- [Getting Started](getting-started.html)
-- [Core Features](features.html)
-- [Web Frontend](frontend.html)
-- [Examples](examples.html)
-- [API Reference](api-reference.html)
-- [White Paper: Fluent, Confident, and Totally Wrong, Until Now](whitepaper.html)
-- [GitHub Repository](https://github.com/Maxamed/llm-contract)
+---
+
+## The Solution: Contracts for AI Output
+
+{: .fs-6 }
+
+Instead of hoping your AI "gets it right," **llm-contracts** lets you define exactly what "right" looks like:
+
+```yaml
+# Your contract with the AI
+schema:
+  warranty_period:
+    type: str
+    pattern: "^(30|90|365) days?$"  # Only valid warranty periods
+  
+rules:
+  - keyword_must_include: ["warranty", "return policy"]
+  - keyword_must_not_include: ["guaranteed", "always", "never"]
+  - no_placeholder_text: "\\[INSERT_.*\\]"
+  - word_count_min: 100
+  - phrase_proximity:
+      terms: ["warranty", "30 days"]
+      max_distance: 20  # Warranty details must be close together
+```
+
+**Result:** Every AI response gets validated before reaching your users. **No more silent failures.**
+
+---
+
+## See It In Action
+
+### ❌ **Before llm-contracts:**
+```json
+{
+  "product_description": "[INSERT_PRODUCT_NAME] is the best quality item you'll ever buy! We guarantee 100% satisfaction always and forever. Our unlimited warranty covers everything!"
+}
+```
+*Passes the "looks good" test. Breaks everything else.*
+
+### ✅ **After llm-contracts:**
+```yaml
+✅ Schema validation: PASSED
+❌ Placeholder text detected: "[INSERT_PRODUCT_NAME]"
+❌ Forbidden keywords: "guarantee", "always", "unlimited"
+❌ Missing required: "30-day warranty", "return policy"
+
+VALIDATION FAILED - Output rejected
+```
+*Catches the problems **before** they reach production.*
+
+---
+
+## Why Developers Choose llm-contracts
+
+### 🚀 **Framework-Agnostic**
+Works with **any LLM** (OpenAI, Anthropic, local models) and **any framework** (LangChain, direct API calls, custom implementations).
+
+### 🛡️ **Production-Ready**
+Built by developers who've shipped AI features at scale. Handles edge cases, provides detailed error reporting, and integrates with your existing CI/CD.
+
+### 🎯 **Zero Vendor Lock-in**
+No API calls to external services. No model-specific prompting tricks. Just pure validation logic that runs anywhere Python runs.
+
+### 📊 **Professional Reports**
+Generate beautiful HTML and Markdown validation reports for stakeholders, compliance, and debugging.
+
+---
 
 ## How Is This Different?
 
 **Validate AI like you validate code — enforce rules, not hope for the best.**
 
-`llm-contracts` is not a model orchestration library. It doesn't reroute, repair, or retry outputs — it asserts correctness after the generation step.
+| Tool | Approach | llm-contracts Difference |
+|------|----------|--------------------------|
+| **Guardrails** | Tries to fix bad output | We **fail fast** — no magic repairs |
+| **LangChain** | Orchestrates AI pipelines | We're a **QA layer**, not orchestration |
+| **Pydantic** | Python type validation | We validate **content quality**, not just types |
+| **Manual Review** | Human checks everything | We **automate validation** at machine speed |
 
-| Tool / Library | Focus | llm-contracts Difference |
-|---|---|---|
-| **Guardrails** | Validates and rewrites model output | We validate and fail fast — no magic fixes |
-| **Unstructured** | Parses messy documents into structure | We expect structure and enforce contracts |
-| **Pydantic** | Python runtime type validation | We support language-level rules, not just types |
-| **LLM-as-a-Judge** | Uses models to rate themselves | We use rules, not opinions |
-| **LangChain** | Pipeline and toolchain orchestration | We're a QA layer, not orchestration |
-
-**Think of this as the unit test framework for AI-generated content — not a controller, not a wrapper, not another GPT tool.**
-
+{: .highlight }
 > **Other tools try to fix LLM output.**  
 > **llm-contracts asks:** "Did the AI follow the rules?"  
 > **If not, we fail it — no excuses.**
 
-Will this prevent GPT from inventing Martian presidents? No. But it will tell you when it does. 
+---
+
+## Get Started Today
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/Maxamed/llm-contract.git
+cd llm-contracts
+
+# Install the package
+pip install -e .
+```
+
+### Quick Validation
+```bash
+# Validate AI output against your rules
+llm-validate output.json --schema schema.yaml --html-report report.html
+```
+
+### Python API
+```python
+from llm_contracts import contracts
+
+# Validate and get detailed results
+result = contracts.validate(ai_output, "schema.yaml")
+if not result.is_valid:
+    print(f"AI failed validation: {result.errors}")
+```
+
+[View Full Documentation](getting-started){: .btn .btn-outline }
+[Try the Web Interface](frontend){: .btn .btn-outline }
+
+---
+
+## Learn More
+
+- **[🎯 The Problem](whitepaper#the-problem-with-trusting-llms)** - Why LLM validation matters
+- **[⚡ Core Features](features)** - Schema validation, content linting, and reporting
+- **[📚 Real Use Cases](examples)** - E-commerce, support, marketing, and more
+- **[🌐 Web Interface](frontend)** - Try validation in your browser
+- **[📄 Complete Whitepaper](whitepaper)** - Deep dive into the business case
+
+---
+
+{: .fs-3 .text-center .mt-8 }
+**Stop hoping your AI gets it right.**
+**Start knowing it does.**
+
+{: .text-center }
+[Get Started on GitHub →](https://github.com/Maxamed/llm-contract){: .btn .btn-primary .fs-6 }
+
+---
+
+{: .fs-2 .text-grey-dk-100 .text-center }
+**Created by [Mohamed Jama](https://www.linkedin.com/in/mohamedjama/) for developers who ship AI features that actually work.**
+
+{: .fs-1 .text-grey-dk-200 .text-center .mt-4 }
+*Major contributions by [Abdirahman Attila](https://github.com/Attili-sys) - Frontend interface, documentation website, and testing infrastructure.* 

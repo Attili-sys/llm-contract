@@ -333,7 +333,10 @@ Contributors will be recognized in:
 
 ### Hall of Fame
 
-Special recognition for:
+**🏆 Major Contributors:**
+- **[Abdirahman Attila (@Attili-sys)](https://github.com/Attili-sys)** - Frontend web interface (2,472+ lines), comprehensive documentation website (1,043+ lines), enhanced testing suite, Jekyll/GitHub Pages setup
+
+Special recognition categories:
 - **Major features** - New validation rules, CLI features
 - **Documentation** - Comprehensive guides, tutorials
 - **Testing** - High coverage, edge cases

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: API Reference
-nav_order: 7
-description: "API reference for llm-contracts"
+nav_order: 6
+description: "Complete API documentation for Python SDK and CLI"
 ---
 
 # API Reference

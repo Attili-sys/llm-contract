@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Examples
-nav_order: 6
-description: "Examples of using llm-contracts"
+nav_order: 4
+description: "Real-world examples - e-commerce, support, marketing, and more"
 ---
 
 # Examples

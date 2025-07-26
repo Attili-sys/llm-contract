@@ -1,13 +1,15 @@
 ---
 layout: default
-title: White Paper
-nav_order: 8
-description: "llm-contracts: Fluent, Confident, and Totally Wrong, Until Now - A white paper by Mohamed Jama"
+title: Whitepaper
+nav_order: 7
+description: "Deep dive: Why LLM validation matters and how llm-contracts solves production AI challenges"
 ---
 
 # llm-contracts: Fluent, Confident, and Totally Wrong, Until Now
 
 *A white paper by Mohamed Jama, July 2025*
+
+*Implementation support and web interface by [Abdirahman Attila](https://github.com/Attili-sys)*
 
 ## Executive Summary
 
@@ -159,7 +161,7 @@ llm-contracts is open-source and production-ready. If you:
 Then you should:
 
 - Explore the GitHub project: [github.com/Maxamed/llm-contract](https://github.com/Maxamed/llm-contract) - read the overview, browse examples, and understand the structure
-- Try it out: Follow the [quickstart guide](getting-started.html) to define your first validation contract
+- Try it out: Follow the [quickstart guide](getting-started) to define your first validation contract
 - Fork or adapt the repo (optional): For customization or contribution
 - Contact us: For walkthroughs, integration help, or enterprise support
 

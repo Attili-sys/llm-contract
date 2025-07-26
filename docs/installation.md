@@ -44,4 +44,4 @@ You should see the help output for the llm-validate command.
 
 ## Next Steps
 
-Once you've installed llm-contracts, head over to the [Getting Started](getting-started.html) guide to learn how to use it. 
+Once you've installed llm-contracts, head over to the [Getting Started](getting-started) guide to learn how to use it. 

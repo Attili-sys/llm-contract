@@ -2,7 +2,7 @@
 layout: default
 title: Web Frontend
 nav_order: 5
-description: "Web-based frontend for llm-contracts"
+description: "Interactive web interface for testing and building validation schemas"
 ---
 
 # Web Frontend
