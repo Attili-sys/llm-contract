@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Getting Started
+nav_order: 2
 description: "Quick start guide - install llm-contracts and validate your first LLM output"
 ---
 

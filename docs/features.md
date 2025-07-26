@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Core Features
+nav_order: 3
 description: "Complete validation toolkit for LLM outputs - schema validation, content linting, and professional reporting"
 ---
 
